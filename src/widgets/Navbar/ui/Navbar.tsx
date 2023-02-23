@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal/Modal';
 import React, { useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -20,9 +20,7 @@ export function Navbar({ className }: NavbarProps) {
                 Войти
             </Button>
 
-            <Modal isOpen={isAuthModal} onClose={() => onToggleModal()}>
-                test test
-            </Modal>
+            <LoginModal isOpen={isAuthModal} onClose={() => onToggleModal()} />
         </div>
     );
 }
